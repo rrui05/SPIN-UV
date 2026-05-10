@@ -1,0 +1,43 @@
+# Local datasets and generated outputs
+data/
+runs/
+logs/
+figures/
+tables/
+artifacts/
+
+# Experiment output directories
+e1_models/*/runs/
+e1_models/*/logs/
+e1_rgbd_baselines/*/runs/
+e1_rgbd_baselines/*/logs/
+e2_domain_gap/runs/
+e2_domain_gap/logs/
+e2_domain_gap/figures/
+e2_domain_gap/tables/
+
+# Python caches and environments
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+env/
+
+# Model weights and large artifacts
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+*.onnx
+*.npy
+*.npz
+*.zip
+*.tar
+*.tar.gz
+
+# OS/editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

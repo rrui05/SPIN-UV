@@ -1,0 +1,48 @@
+{
+  "display_name": "SegFormer-B5 Cityscapes",
+  "model_slug": "segformer_b5_cityscapes_source_only",
+  "architecture_key": "segformer_b5",
+  "framework": "hf_auto",
+  "model_id": "nvidia/segformer-b5-finetuned-cityscapes-1024-1024",
+  "model_url": "https://huggingface.co/nvidia/segformer-b5-finetuned-cityscapes-1024-1024",
+  "source_dataset": "Cityscapes",
+  "training_type": "public_source_only_checkpoint",
+  "data_root": "../data/processed/spinuv_semantic",
+  "split": "test",
+  "ignore_index": 255,
+  "sample_count": 8,
+  "save_predictions": true,
+  "analysis_classes": [
+    "building",
+    "road",
+    "car",
+    "wall",
+    "sky",
+    "sidewalk",
+    "vegetation",
+    "pole",
+    "person"
+  ],
+  "source_to_spinuv": {
+    "building": "building",
+    "road": "road",
+    "car": "car",
+    "wall": "wall",
+    "sky": "sky",
+    "sidewalk": "sidewalk",
+    "vegetation": "vegetation",
+    "pole": "pole",
+    "person": "person"
+  },
+  "excluded_selected_spinuv_labels": [
+    "scooter",
+    "clutter",
+    "tricycle",
+    "roadblock"
+  ],
+  "mapping_notes": [
+    "Only labels present in the selected SPIN-UV analysis set and semantically consistent with Cityscapes are evaluated.",
+    "The Cityscapes motorcycle label is not mapped to SPIN-UV scooter.",
+    "The Cityscapes bicycle, rider, truck, traffic sign, traffic light, fence, terrain, bus, and train labels are outside the E2 main comparison set."
+  ]
+}

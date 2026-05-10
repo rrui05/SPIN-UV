@@ -1,0 +1,33 @@
+{
+  "name": "selected_shared_external_spinuv_labels",
+  "policy": "Use only labels selected for SPIN-UV analysis that also have semantically consistent source-dataset labels. Do not use near-proxy labels when the object concept differs.",
+  "main_comparison_classes": [
+    "building",
+    "road",
+    "car",
+    "wall",
+    "sky",
+    "sidewalk",
+    "vegetation",
+    "pole",
+    "person"
+  ],
+  "excluded_from_main_comparison": [
+    {
+      "spinuv_label": "scooter",
+      "reason": "No exact Cityscapes or ADE20K scooter label; motorcycle is not treated as equivalent."
+    },
+    {
+      "spinuv_label": "clutter",
+      "reason": "Dataset-specific catch-all class; not semantically stable across source datasets."
+    },
+    {
+      "spinuv_label": "tricycle",
+      "reason": "No exact public source label in the selected source datasets."
+    },
+    {
+      "spinuv_label": "roadblock",
+      "reason": "No exact public source label in the selected source datasets."
+    }
+  ]
+}

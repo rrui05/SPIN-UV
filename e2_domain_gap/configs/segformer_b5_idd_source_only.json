@@ -1,0 +1,47 @@
+{
+  "display_name": "SegFormer-B5 IDD",
+  "model_slug": "segformer_b5_idd_source_only",
+  "architecture_key": "segformer_b5",
+  "framework": "hf_auto",
+  "model_id": "izzako/segformer-b5-finetuned-IDD-L2_v2",
+  "model_url": "https://huggingface.co/izzako/segformer-b5-finetuned-IDD-L2_v2",
+  "source_dataset": "IDD 20K",
+  "training_type": "community_public_source_only_checkpoint",
+  "data_root": "../data/processed/spinuv_semantic",
+  "split": "test",
+  "ignore_index": 255,
+  "sample_count": 8,
+  "save_predictions": true,
+  "analysis_classes": [
+    "building",
+    "road",
+    "sky",
+    "sidewalk",
+    "vegetation",
+    "pole",
+    "person"
+  ],
+  "source_to_spinuv": {
+    "building": "building",
+    "road": "road",
+    "sky": "sky",
+    "sidewalk": "sidewalk",
+    "vegetation": "vegetation",
+    "pole": "pole",
+    "person": "person"
+  },
+  "excluded_selected_spinuv_labels": [
+    "scooter",
+    "clutter",
+    "tricycle",
+    "roadblock"
+  ],
+  "mapping_notes": [
+    "This is a community Hugging Face checkpoint fine-tuned from nvidia/mit-b5 on IDD 20K.",
+    "Only exact source labels in the checkpoint id2label are mapped into SPIN-UV labels.",
+    "The public IDD L2 checkpoint reports 16 labels and does not expose exact car or wall metrics in its model card; car and wall are therefore excluded for this IDD row.",
+    "IDD autorickshaw, motorcycle, rider, truck, curb, fence, billboard, parking, and rail track are outside this row's comparison set.",
+    "The IDD motorcycle label is not mapped to SPIN-UV scooter.",
+    "This row uses a 7-label exact overlap: building, road, sky, sidewalk, vegetation, pole, person."
+  ]
+}

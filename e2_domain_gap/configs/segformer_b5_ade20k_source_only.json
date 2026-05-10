@@ -1,0 +1,53 @@
+{
+  "display_name": "SegFormer-B5 ADE20K",
+  "model_slug": "segformer_b5_ade20k_source_only",
+  "architecture_key": "segformer_b5",
+  "framework": "hf_auto",
+  "model_id": "nvidia/segformer-b5-finetuned-ade-640-640",
+  "model_url": "https://huggingface.co/nvidia/segformer-b5-finetuned-ade-640-640",
+  "source_dataset": "ADE20K",
+  "training_type": "public_source_only_checkpoint",
+  "data_root": "../data/processed/spinuv_semantic",
+  "split": "test",
+  "ignore_index": 255,
+  "sample_count": 8,
+  "save_predictions": true,
+  "analysis_classes": [
+    "building",
+    "road",
+    "car",
+    "wall",
+    "sky",
+    "sidewalk",
+    "vegetation",
+    "pole",
+    "person"
+  ],
+  "source_to_spinuv": {
+    "building": "building",
+    "house": "building",
+    "skyscraper": "building",
+    "road": "road",
+    "car": "car",
+    "wall": "wall",
+    "sky": "sky",
+    "sidewalk": "sidewalk",
+    "tree": "vegetation",
+    "grass": "vegetation",
+    "plant": "vegetation",
+    "palm": "vegetation",
+    "pole": "pole",
+    "person": "person"
+  },
+  "excluded_selected_spinuv_labels": [
+    "scooter",
+    "clutter",
+    "tricycle",
+    "roadblock"
+  ],
+  "mapping_notes": [
+    "Only selected SPIN-UV labels with a defensible ADE20K semantic counterpart are evaluated.",
+    "ADE20K vegetation source labels are grouped into the SPIN-UV vegetation class.",
+    "No ADE20K two-wheeler class is mapped to SPIN-UV scooter."
+  ]
+}
